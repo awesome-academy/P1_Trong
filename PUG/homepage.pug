@@ -1,0 +1,27 @@
+//- mixin bannerRight(i, h3, p) 
+//-     .banner__text
+//-         .banner__text--left
+//-             i(class= i)
+//-         .banner__text--right
+//-             h3= h3
+//-             p= p
+//- mixin details(span, i1, i2)
+//-     .footer__top--title.grid--title
+//-         i.fas.fa-th-large.grid--icon
+//-             span= span
+//-     .btn--flex
+//-         i(class= i1)
+//-         i(class= i2)
+//- // main
+//- .main
+//-     .main__wrapper
+//-         .main__banner--flex
+//-             .banner__img
+//-                 img(src="../../images/main-banner.png" alt="Ảnh banner 1")
+//-             +bannerRight('fas fa-plane', 'Miễn phí vận chuyển', 'Chúng tôi vận chuyển miễn phí với các đơn hàng trị giá trên 1000.000 đơn')
+//-             +bannerRight('fas fa-sync-alt', 'chính sách đổi trả', 'Nếu phát hiện lỗi của nhà sản xuất, chúng tôi sẽ đổi mới sản phẩm trong 7 ngày đầu tiên.')
+//-             +bannerRight('fas fa-gift', 'khuyến mãi hàng tuần', 'Mỗi thứ 7 hàng tuần đều có chương trình giảm giá và khuyến mại lơn.')
+//-             +bannerRight('fas fa-thumbs-up', 'cam kết hàng chính hãng', 'Chúng tôi cam kết bán hàng chính hãng 100% với tất cả các loại sản phẩm')
+//-         +details('sản phẩm nổi bật', 'far fa-caret-square-left', )
+
+// end main
