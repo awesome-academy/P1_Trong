@@ -1,16 +1,17 @@
+@import '../variable/variable.scss';
 @mixin gridIcon {
   .grid--title {
-      padding-bottom: 1.73333333rem;
+    padding-bottom: 1.73333333rem;
   }
   .grid--icon {
     float: left;
-    color: #f5bd10;
+    color: $cam;
   }
   .footer__top--title {
     clear: both;
     overflow: hidden;
     & span {
-      font-size: 1.0666667rem !important;
+      font-size: $font-15 !important;
       color: black;
       text-transform: uppercase;
       font-weight: bold;
@@ -20,7 +21,9 @@
 }
 
 footer {
-  margin-top: 300px;
+  clear: both;
+  background-color: #f7f7f7;
+  margin-top: 3rem;
 }
 .footer__wrapper {
   padding-left: 1rem;
@@ -36,7 +39,7 @@ footer {
 
 .footer--text {
   color: #636363;
-  font-size: 0.8666667rem;
+  font-size: $font-13;
 }
 
 .footer__top--main p {
@@ -45,6 +48,9 @@ footer {
 .footer__item {
   padding-top: 10px;
   padding-bottom: 13px;
+  & .fa-mobile-alt {
+    padding-bottom: 1.333rem;
+  }
 }
 .footer__link {
   color: #888888;
@@ -52,9 +58,6 @@ footer {
 .footer__connect-flex {
   display: flex;
   flex-direction: column;
-  & i{
-    padding: 10px 10px 0 0;
-  }
   & span {
     padding-left: 5px;
   }
@@ -88,23 +91,28 @@ footer {
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
-  border: 2px solid #f5bd10;
+  border: 2px solid $cam;
   & i {
     padding: 40%;
-    color: #f5bd10;
+    color: $cam;
   }
 }
-
-.footer__bottom {
+.footer__bottom--bg {
   background-color: #252525;
+}
+.footer__bottom {
+  
   color: #acacac;
-  font-size: 0.86666667rem;
+  font-size: $font-13;
   display: flex;
   flex-direction: column;
   text-align: center;
 }
 .footer__copyright {
   padding: 1.66667rem 0 1.5rem 0;
+  & span {
+    color: #fff;
+  }
 }
 .footer__bottom--menu {
   display: flex;
@@ -116,3 +124,84 @@ footer {
   color: #acacac;
   padding: 1rem 1.2rem 1rem 1.2rem;
 }
+// tablet
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .footer__top {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+  .footer__main {
+    & .footer__bank {
+      & .footer__main--grid {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+      }
+    }
+    & .footer__answers {
+      & .footer--bd-flex {
+        display: flex;
+        justify-content: space-around;
+      }
+    }
+  }
+  
+}
+
+// endt tablet
+// desktop
+@media screen and (min-width: 1024px) {
+  .footer__top {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #e1e1e1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  & .footer__me {
+    width: 20.53333rem;
+  }
+  & .footer__top--main {
+    & .footer__menu {
+      .footer__add {
+        padding-top: 2rem;
+      }
+    }
+  }
+  .footer__main {
+    display: flex;
+    margin-bottom: 3rem;
+    & h3 {
+      font-size: 0.866667rem;
+      color: #636363;
+    }
+    & .footer__bank {
+      margin-right: 6.666667rem;
+      margin-top: 0;
+      & .footer__main--grid {
+        grid-template-columns: auto auto auto auto;
+        margin-top: 1.3333333rem;
+      }     
+    }
+    & .footer__answers {
+      padding-top: 0;
+      & .footer--bd-flex {
+        display: flex;
+        justify-content: space-between;
+        & .footer--bd--hl:nth-child(1) {
+          margin-right: 4rem;
+        }
+      }
+    }
+  }
+  .footer__bottom {
+    display: flex;
+    background-color: #252525;
+    flex-direction: row;
+    justify-content: space-between;
+    & .footer__bottom--menu {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+// end desktop
