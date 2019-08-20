@@ -1,0 +1,14 @@
+
+.blog__text {
+    & p::after {
+        content: ' Đọc tiếp';
+        color: #f5bd10;
+    }
+}
+.blog__title--flex {
+    & span {
+        &:nth-child(2) {
+            color: #f5bd10;
+        }
+    }
+}

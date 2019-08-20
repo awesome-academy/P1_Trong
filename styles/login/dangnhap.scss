@@ -1,0 +1,52 @@
+.login__flex {
+  display: flex;
+  margin-bottom: 2rem;
+  & .login-form {
+    margin-right: 2rem;
+  }
+  & .login__title {
+    font-size: 0.9333333rem;
+    color: #333;
+    font-weight: bold;
+    padding: 2rem 0;
+  }
+  & label {
+    width: 100%;
+    font-size: 0.9333333rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    &::after {
+      content: " *";
+      color: red;
+    }
+  }
+  & input[type="text"],
+  & input[type="email"] {
+    width: 100%;
+    margin: 1rem 0;
+  }
+  & .login__text {
+      margin-bottom: 2rem;
+    & a {
+      float: right;
+      font-size: 0.93333rem;
+      color: #f5bd10;
+      border-bottom: 1px solid #f5bd10;
+    }
+  }
+  
+  & .login__flex-right {
+      & p {
+          color: #939393;
+      }
+  }
+}
+ .btn__login {
+  padding: 1rem 1.33333rem;
+  background-color: #252525;
+  color: #fff;
+  border: none;
+  &:hover {
+      background-color: #f5bd10;
+  }
+}

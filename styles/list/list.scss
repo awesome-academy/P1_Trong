@@ -1,0 +1,14 @@
+.list__grid--button {
+    visibility: visible ;
+    justify-content: start;
+}
+.details__list {
+    display: grid !important;
+    grid-template-columns: auto !important;
+}
+.details__list {
+    margin-top: 2rem;
+    &:nth-child(1) {
+        margin-top: 0;
+    }
+}

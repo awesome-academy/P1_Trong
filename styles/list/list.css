@@ -1,0 +1,22 @@
+.list__grid--button {
+  visibility: visible;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.details__list {
+  display: -ms-grid !important;
+  display: grid !important;
+  -ms-grid-columns: auto !important;
+      grid-template-columns: auto !important;
+}
+
+.details__list {
+  margin-top: 2rem;
+}
+
+.details__list:nth-child(1) {
+  margin-top: 0;
+}
+/*# sourceMappingURL=list.css.map */
