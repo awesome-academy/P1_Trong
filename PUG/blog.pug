@@ -1,0 +1,125 @@
+mixin detailsMenu(i, ...a) 
+    each item in a
+        .details__flex--left--menu--column.details__flex--left--menu--column--none.menu--hover.clear--padding
+            i(class= i)
+            span(href="#")= item
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width,initial-scale=1.0")
+        meta(http-euiv="X-UA-Compatible" content="ie=edge")
+        title Giới thiệu website
+        link(rel="stylesheet" href="../../styles/reset/reset.css")
+        link(rel="stylesheet" href="../../styles/main.css")
+        // font css
+        link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap")
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous")
+    body
+        include header.pug
+        .resize__wrapper 
+            .link__web
+                p Trang chủ 
+                    i.fas.fa-caret-right
+                    |Tin tức
+            .details--flex
+                .details__flex--left
+                    +detailsMenu('fas fa-bars', 'danh mục sản phẩm')
+                    +detailsMenu('fas fa-th-large', 'Máy in phun khổ lớn', 'Máy quét Canon 3D', 'Máy hàn điện Alunima', 'Máy khoan Decameta', 'Máy phay đa năng CNC', 'Máy mài, tiện DC 12V', 'Máy khoan, cắt CNC', 'Máy quay thông minh N3', 'Motor R34C đa dạng', 'Máy in laser màu 3D')
+                    
+                    .blog__clear-padding.blog__border-bottom
+                        +detailsMenu('fas fa-th-large', 'danh mục tin tức')
+                        +detailsMenu(' ', 'Đời sống pháp luật (5)')
+                        +detailsMenu(' ', 'Kinh tế trong nước (8)')
+                        +detailsMenu(' ', 'Sức khỏe và gia đình (9)')
+                        +detailsMenu(' ', 'Công nghệ thông tin (5)')
+                        +detailsMenu(' ', 'Tin tức khác 12 (5)')
+                    .blog__clear-padding
+                        +detailsMenu('fas fa-bars', 'thư viện hình ảnh')
+                        .grid__blog--img
+                            .img1
+                                img(src="../../images/blog-grid-1.png")
+                            .img1
+                                img(src="../../images/blog-grid-2.png")
+                            .img1
+                                img(src="../../images/blog-grid-3.png")
+                            .img1
+                                img(src="../../images/blog-grid-4.png")
+                            .img1
+                                img(src="../../images/blog-grid-5.png")
+                            .img1
+                                img(src="../../images/blog-grid-6.png")
+                    .blog__clear-padding            
+                        +detailsMenu('fas fa-bars', 'thẻ tag')
+                        .blog__tag
+                            a(href='#') thời trang
+                            a(href='#') máy khoan
+                            a(href='#') news
+                            a(href='#') công nghiệp
+                            a(href='#') xây dựng
+                            a(href='#') phay
+                            a(href='#') máy cắt
+                            a(href='#') hóa chất
+                .details__flex--right
+                    .details__flex--main
+                        .blog__img
+                            img(src='../../images/blog-banner-1.png' class='resize-img')
+                        .blog__title
+                            h3 thế hệ máy khoan cắt cnc đầu tiên đã được tái sử dụng
+                            .blog__title--flex
+                                span Thứ năm, ngày 23/10/2015 8:00 AM 
+                                span
+                                    i(class="fas fa-user-alt")    Đăng bởi 
+                                    span(style="color: #f5bd10")   Design Team
+                                span 
+                                    i(class="far fa-comments")    12 Bình luận
+                        .blog__text
+                            p But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure...
+                        .blog__img
+                            img(src='../../images/blog-banner-2.png' class='resize-img')
+                        .blog__title
+                            h3 thế hệ máy khoan cắt cnc đầu tiên đã được tái sử dụng
+                            .blog__title--flex
+                                span Thứ năm, ngày 23/10/2015 8:00 AM 
+                                span
+                                    i(class="fas fa-user-alt")    Đăng bởi 
+                                    span(style="color: #f5bd10")   Design Team
+                                span 
+                                    i(class="far fa-comments")    12 Bình luận
+                        .blog__text
+                            p But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure...
+                        .blog__img
+                            img(src='../../images/blog-banner3.png' class='resize-img')
+                        .blog__title
+                            h3 thế hệ máy khoan cắt cnc đầu tiên đã được tái sử dụng
+                            .blog__title--flex
+                                span Thứ năm, ngày 23/10/2015 8:00 AM 
+                                span
+                                    i(class="fas fa-user-alt")    Đăng bởi 
+                                    span(style="color: #f5bd10")   Design Team
+                                span 
+                                    i(class="far fa-comments")    12 Bình luận
+                        .blog__text
+                            p But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure...
+                        .blog__img
+                            img(src='../../images/blog-banner-5.png' class='resize-img')
+                        .blog__title
+                            h3 thế hệ máy khoan cắt cnc đầu tiên đã được tái sử dụng
+                            .blog__title--flex
+                                span Thứ năm, ngày 23/10/2015 8:00 AM 
+                                span
+                                    i(class="fas fa-user-alt")    Đăng bởi 
+                                    span(style="color: #f5bd10")   Design Team
+                                span 
+                                    i(class="far fa-comments")    12 Bình luận
+                        .blog__text
+                            p But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure...
+            .details__bottom
+                .pagination
+                    a(href="#") Trang trước
+                    a(href="#") 1
+                    a(href="#") 2
+                    a(href="#") 3
+                    a(href="#") Trang sau
+        include footer.pug    

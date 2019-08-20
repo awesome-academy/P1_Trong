@@ -1,0 +1,6 @@
+@charset "UTF-8";
+.blog__text p::after {
+  content: ' Đọc tiếp';
+  color: #f5bd10;
+}
+/*# sourceMappingURL=blog.css.map */

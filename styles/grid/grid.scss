@@ -1,0 +1,129 @@
+.details__flex--left {
+  & .details__flex--left--menu--column {
+    &:nth-child(19) i {
+      color: red;
+    }
+    &:nth-child(20) i {
+      color: yellow;
+    }
+    &:nth-child(21) i {
+      color: blue;
+    }
+    &:nth-child(22) i {
+      color: #acacac;
+    }
+    &:nth-child(23) i {
+      color: black;
+    }
+  }
+  & .details__flex--left--menu--column:nth-child(1) {
+    background-color: #202020;
+    color: #f5bd10;
+  }
+  & .details__flex--left--menu--column:nth-child(12) {
+    background-color: #202020;
+    color: #f5bd10;
+    margin-top: 1rem;
+  }
+  & .details__flex--left--menu--column:nth-child(18) {
+    background-color: #202020;
+    color: #f5bd10;
+    margin-top: 1rem;
+  }
+  & .details__flex--left--menu--column:nth-child(24) {
+    background-color: #202020;
+    color: #f5bd10;
+    margin-top: 1rem;
+  }
+}
+.details__flex--left {
+  & .details__img--flex {
+    display: flex;
+    align-items: center;
+    justify-content: inherit;
+    padding: 1rem 0;
+    & .details__img--left img {
+      width: 5.33333rem;
+    }
+    & .details__img--right {
+      margin-left: 1rem;
+      & h3 {
+        font-size: 0.933333rem;
+        font-weight: 400;
+      }
+      & p {
+        margin-top: 1rem;
+        color: #ff0000;
+        font-weight: 400;
+      }
+    }
+  }
+}
+.details--flex {
+  display: flex;
+  & .list__title {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.list__grid {
+  & .grid--item--img img {
+    width: 160px;
+    height: 160px;
+  }
+}
+.list__grid {
+  display: grid;
+  grid-row-gap: 1rem;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto auto auto auto;
+}
+.details__grid--item {
+  display: block;
+}
+.details__flex--right {
+  & .list__title {
+    padding: 1.6666667rem 0;
+    & .list--left {
+      & select {
+        color: #898989;
+        padding: 0.5rem;
+      }
+      & span:nth-child(2) {
+        margin-left: 1rem;
+      }
+    }
+    & .list--right {
+      & i {
+        color: #898989;
+        border: 1px solid;
+        padding: 0.5rem;
+        &:nth-child(1) {
+          margin-right: 0.5rem;
+        }
+        &:hover {
+          color: #f5bd10;
+        }
+      }
+    }
+  }
+  margin-left: 2rem;
+}
+
+.details__bottom {
+  float: right;
+  margin-top: 3.33333rem;
+  margin-bottom: 4.666667rem;
+  & .pagination {
+    & a {
+      padding: 1rem;
+      border: 1px solid #cccccc;
+      display: inline-block;
+      margin: 0 2px;
+      color: #adadad;
+      &:nth-child(2) {
+        background-color: #f5bd10;
+      }
+    }
+  }
+}

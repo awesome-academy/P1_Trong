@@ -1,27 +1,139 @@
-//- mixin bannerRight(i, h3, p) 
-//-     .banner__text
-//-         .banner__text--left
-//-             i(class= i)
-//-         .banner__text--right
-//-             h3= h3
-//-             p= p
-//- mixin details(span, i1, i2)
-//-     .footer__top--title.grid--title
-//-         i.fas.fa-th-large.grid--icon
-//-             span= span
-//-     .btn--flex
-//-         i(class= i1)
-//-         i(class= i2)
-//- // main
-//- .main
-//-     .main__wrapper
-//-         .main__banner--flex
-//-             .banner__img
-//-                 img(src="../../images/main-banner.png" alt="Ảnh banner 1")
-//-             +bannerRight('fas fa-plane', 'Miễn phí vận chuyển', 'Chúng tôi vận chuyển miễn phí với các đơn hàng trị giá trên 1000.000 đơn')
-//-             +bannerRight('fas fa-sync-alt', 'chính sách đổi trả', 'Nếu phát hiện lỗi của nhà sản xuất, chúng tôi sẽ đổi mới sản phẩm trong 7 ngày đầu tiên.')
-//-             +bannerRight('fas fa-gift', 'khuyến mãi hàng tuần', 'Mỗi thứ 7 hàng tuần đều có chương trình giảm giá và khuyến mại lơn.')
-//-             +bannerRight('fas fa-thumbs-up', 'cam kết hàng chính hãng', 'Chúng tôi cam kết bán hàng chính hãng 100% với tất cả các loại sản phẩm')
-//-         +details('sản phẩm nổi bật', 'far fa-caret-square-left', )
+mixin bannerRight(i, h3, p) 
+    .banner__text
+        .banner__text--left
+            i(class= i)
+        .banner__text--right
+            h3= h3
+            p= p
+mixin details(span, i1, i2, menu)
+    .footer__top--title.grid--title
+        i.fas.fa-th-large.grid--icon
+            span= span    
+        .btn__flex
+            if(menu== true)
+                i(class= i1)
+                i(class= i2)
+            else
+                .btn__flex--left
+                    a(href="#") Máy khoan
+                    a(href="#") Máy in 3D
+                    a(href="#") Máy CNC
+                    a(href="#") Máy tiện
+                    a(href="#") Máy khác
+                .btn__flex--right
+                    i(class= i1)
+                    i(class= i2)
+mixin detailsMenu(i, i2, ...a) 
+    .details__flex--left--menu--column
+        i(class= 'fas fa-th-large')
+            span(href="#") Máy khoan, cắt CNC
+        i(class= 'fas fa-caret-down')
+    each item in a
+        .details__flex--left--menu--column.details__flex--left--menu--column--none
+            i(class= i)
+                span(href="#")= item
+            i(class= i2)
+mixin detailsMenuItem(TF, ...src)
+    if(TF == true)
+        each item in src
+            .details__grid--item
+                .grid--item--img
+                    img(src= item alt="Ảnh img sản phẩm" class="resize-img")
+                .grid--item--text
+                    p 1.550.00 Đ
+                    p MÁY KHOAN BLACK DECKER
+                    P   
+                        i.fas.fa-star
+                        i.fas.fa-star
+                        i.fas.fa-star
+                        i.fas.fa-star
+                        i.fas.fa-star
+                        span (12 Đánh giá)
+                .grid--item--button
+                    button Mua ngay
+                    button Xem chi tiết
+    else 
+        each item in src
+            .details__grid--item.details__hmv--grid
+                .grid--item--img
+                    img(src= item alt="Ảnh img sản phẩm" class="resize-img")
+                .details__hmv--right
+                    .grid--item--text.gird--item--text--style
+                        p MÁY KHOAN BLACK DECKER
+                        P   
+                            i.fas.fa-star
+                            i.fas.fa-star
+                            i.fas.fa-star
+                            i.fas.fa-star
+                            i.fas.fa-star
+                            span (12 Đánh giá)
+                        P Lorem ipsum dolar sit amet, consectetur adipiscing elit, sed do eiusmod tempor inclidunt ut labore commo...
+                        p 2.350.000 Đ
+                    .grid--item--button
+                        button Mua ngay
+                        button Xem chi tiết
+mixin mainSlide(...src)
+    each item in src
+        .slide
+            img(src= item class="resize-img")
+// main
+.main
+    .resize__wrapper
+        .main__banner--flex
+            .banner__img--left
+                img(src="../../images/main-banner.png" alt="Ảnh banner 1" class="resize-img")
+            .banner__img--right
+                +bannerRight('fas fa-plane', 'Miễn phí vận chuyển', 'Chúng tôi vận chuyển miễn phí với các đơn hàng trị giá trên 1000.000 Đ')
+                +bannerRight('fas fa-sync-alt', 'chính sách đổi trả', 'Nếu phát hiện lỗi của nhà sản xuất, chúng tôi sẽ đổi mới sản phẩm trong 7 ngày đầu tiên.')
+                +bannerRight('fas fa-gift', 'khuyến mãi hàng tuần', 'Mỗi thứ 7 hàng tuần đều có chương trình giảm giá và khuyến mại lơn.')
+                +bannerRight('fas fa-thumbs-up', 'cam kết hàng chính hãng', 'Chúng tôi cam kết bán hàng chính hãng 100% với tất cả các loại sản phẩm')
+        .detailt__title
+            +details('sản phẩm nổi bật', 'fas fa-caret-left', 'fas fa-caret-right', true)
+            .details--grid
+                .details__flex--left
+                    +detailsMenu('fas fa-th-large', 'fas fa-caret-down', 'Máy in phun khổ lớn', 'Máy quét Canon 3D', 'Máy hàn điện Alunima', 'Máy khoan Decameta', 'Máy phay đa năng CNC', 'Máy mài, tiện DC 12V', 'Máy khoan, cắt CNC', 'Máy quay thông minh N3', 'Motor R34C đa dạng', 'Máy in laser màu 3D')
+                .details__flex--right.details--grid
+                    +detailsMenuItem(true, '../../images/nb-maykhoan-1.png','../../images/nb-maykhoan-2.png','../../images/nb-maykhoan-3.png','../../images/nb-maykhoan-4.png','../../images/nb-maykhoan-5.png','../../images/nb-maykhoan-6.png')
+        .detailt__title
+            +details('sản phẩm mới', 'fas fa-caret-left', 'fas fa-caret-right', false)
+            .details--grid
+                +detailsMenuItem(true, '../../images/spm-1.png', '../../images/spm-2.png', '../../images/spm-3.png' )
+        .main__banner
+            .main__banner--left
+                img(src="../../images/main-banner 2.png" class="resize-img")
+            .main__banner--right
+                img(src="../../images/main-banner3.png" class="resize-img")
+        .detailt__title 
+            +details('sản phẩm bán chạy', 'fas fa-caret-left', 'fas fa-caret-right', false)
+            .details--grid.details--grid--spbc
+                +detailsMenuItem(true, '../../images/spbc-1.png', '../../images/spbc-2.png', '../../images/spbc-3.png', '../../images/spbc-4.png', '../../images/spbc-5.png')
+        .banner__gird
+            .main__banner 
+                img(src="../../images/main-banner5.png" alt="Ảnh banner bottom" class="resize-img")
+            .banner__grid__text
+                h3 ROCKET WORKARU
+                p Máy cắt, khoan đa năng tích hợp điều khiển từ xa loại nhỏ thích hợp với các hộ gia đình
+                .banner__grid--btn.grid--item--button
+                    button MUA NGAY
+                    button CHI TIẾT
+        .bottom__banner
+            .bottom__banner--img
+                img(src='../../images/main-banner4.png' class="resize-img")
+        .detailt__title
+            +details('hàng mới về', 'fas fa-caret-left', 'fas fa-caret-right', true)
+            .details--grid.details__hmv
+                +detailsMenuItem(false, '../../images/hmv-1.png','../../images/hmv-2.png','../../images/hmv-3.png','../../images/hmv-4.png')
+
+    .main__slide
+        .wrapper__slide
+            +mainSlide('../../images/slide1.png', '../../images/slide2.png', '../../images/slide3.png', '../../images/slide4.png', '../../images/slide5.png')
+            a(href="#" class= "slide--prev") &#10094;
+            a(href="#" class= "slide--next") &#10095;
+    .main__contact
+        .contact__background
+            h3 Đăng ký để nhận tin khuyến mại hàng tuần
+            .background__text
+                input(type="email" placeholder="Nhập email của bạn")
+                button.background__btn--color ĐĂNG KÝ
 
 // end main

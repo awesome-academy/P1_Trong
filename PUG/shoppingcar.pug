@@ -1,0 +1,72 @@
+mixin table(stt, src, p1, p2, p3, p4, i)    
+    tr
+        td 
+            p= stt
+        td(align=center)
+            img(src= src)
+        td
+            p= p1
+        td
+            p= p2
+        td
+            p= p3
+        td
+            p= p4
+        td
+            i(class= i)
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width,initial-scale=1.0")
+        meta(http-euiv="X-UA-Compatible" content="ie=edge")
+        title Giới thiệu website
+        link(rel="stylesheet" href="../../styles/reset/reset.css")
+        link(rel="stylesheet" href="../../styles/main.css")
+        // font css
+        link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap")
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous")
+    body
+        include header.pug
+        .resize__wrapper
+            .link__web
+                p Trang chủ 
+                    i.fas.fa-caret-right
+                    |Giỏ hàng
+            table.table__cart
+                tr
+                    th stt
+                    th sản phẩm
+                    th thông tin
+                    th đơn giá
+                    th số lượng
+                    th thành tiền
+                    th xóa
+                +table('1', '../../images/cart-1.png', 'máy khoan, cắt đa năng CNC', '2.350.00 Đ', '1', '2.350.00 Đ', 'fas fa-times')
+                +table('2', '../../images/cart-2.png', 'máy khoan, cắt đa năng CNC', '2.350.00 Đ', '1', '2.350.00 Đ', 'fas fa-times')
+                +table('3', '../../images/cart-3.png', 'máy khoan, cắt đa năng CNC', '2.350.00 Đ', '1', '2.350.00 Đ', 'fas fa-times')
+            table.table__total
+                tr
+                    td 
+                        p tổng tiền
+                    td
+                        p 6.850.000 Đ
+                tr  
+                    td
+                        p thuế(VAT)
+                    td
+                        p 6850.000 Đ
+                tr
+                    td
+                        p thanh toán
+                    td 
+                        p 7.520.000 Đ
+                tr
+                    td.btn--none
+                        button TIẾP TỤC MUA HÀNG
+                    td.btn--none
+                        button THANH TOÁN
+
+        include footer.pug    

@@ -1,0 +1,7 @@
+
+.blog__text {
+    & p::after {
+        content: ' Đọc tiếp';
+        color: #f5bd10;
+    }
+}

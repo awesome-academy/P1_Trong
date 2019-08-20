@@ -1,7 +1,18 @@
+mixin headerMenu(li, a, ...args) 
+    nav.header__menu
+        ul.menu
+            each item in args
+                li(class= li)
+                    a(class= a)= item
+mixin nav(...items)
+    ul(class= "menu__list")
+        each item in items
+            li(class= "menu__list__item")
+                a(class= "menu__list__link" href="#") 
 header
     .header
         .header__size
-            .header__top
+            .header__top.resize__wrapper
                 .header__left
                     i.fab.fa-facebook-f
                     i.fab.fa-google-plus-g
@@ -10,43 +21,32 @@ header
                 .header__right
                     a(href="#") Đăng ký
                     a(href="#") Đăng nhập
-        .header__main
-            .header__logo
-                img(src="../../images/header-logo.jpg", alt="Ảnh logo")
-            .header__hotline
-                .header__hotline-left
-                    h3 HOTLINE
-                    p (04) 9500 9650 - (04) 9500 8850
-                .header__hotline-right
-                    h3 ĐẶT HÀNG NHANH
-                    p (04) 9500 9650 - (04) 9500 8850
+        .resize__wrapper
+            .header__main
+                .header__logo
+                    img(src="../../images/header-logo.jpg", alt="Ảnh logo", class="resize-img")
+                .header__hotline
+                    .header__hotline-left.header__hotline-style
+                        h3 HOTLINE
+                        p (04) 9500 9650 - (04) 9500 8850
+                    .header__hotline-right.header__hotline-style
+                        h3 ĐẶT HÀNG NHANH
+                        p (04) 9500 9650 - (04) 9500 8850
                 .header__search
                     .search--relative
                         input(type="text" placeholder="Tìm kiếm...")
                         button 
                             i.fas.fa-search
-        .header__bottom
-            .menu__icon
-                a(href="#")
-                    i.fas.fa-bars            
-            nav.header__menu
-                ul.menu
-                    li.menu__item 
-                        a.menu__link(href="homepage.html") trang chủ
-                    li.menu__item 
-                        a.menu__link(href="about.html") giới thiệu
-                    li.menu__item 
-                        a.menu__link(href="product.html") sản phẩm
-                    li.menu__item 
-                        a.menu__link(href="promotion.html") tin khuyến mãi
-                    li.menu__item 
-                        a.menu__link(href="service.html") dịch vụ
-                    li.menu__item 
-                        a.menu__link(href="contact.html") liên hệ
-            .header__cart
-                .header__cart--relative
+        .header__bg-menu
+            .resize__wrapper.header__bottom
+                .menu__icon
                     a(href="#")
-                        i.fas.fa-shopping-cart
-                    .header__cart--absolute
-                        p 0
+                        i.fas.fa-bars            
+                +headerMenu('menu__item', 'header__menu__link', 'trang chủ', 'giới thiệu', 'sản phẩm', 'tin khuyến mại', 'dịch vụ', 'liên hệ')
+                .header__cart
+                    .header__cart--relative
+                        a(href="#")
+                            i.fas.fa-shopping-cart
+                        .header__cart--absolute
+                            p 0
 
